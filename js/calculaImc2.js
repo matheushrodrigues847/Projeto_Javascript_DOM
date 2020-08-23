@@ -18,19 +18,43 @@ for(var i=0;i < pacientes.length;i++){
 
 	
 	var alturaehValida = validaAltura(altura);
+	var pesoehValido = validaPeso(peso);
 
 	if(!alturaehValida){
-		altura.textContent = "Altura inválida";
+		tdimc.textContent = "Altura inválida";
+		paciente.classList.add("paciente-invalido");
+	}
+	if(!pesoehValido){
+		tdimc.textContent = "Peso inválido";
 		paciente.classList.add("paciente-invalido");
 	}
 
+	if(alturaehValida&&pesoehValido){
+		var imc = calculaImc(peso,altura);
+
+		tdimc.textContent = imc;
+	}
+
+
 }
 
-validaAltura(altura){
-	var alturaok = true;
+function validaAltura(altura){
+	var alturaehValida = true;
 	if(altura<=0||altura>2.5){
-		alturaok = false;
+		alturaehValida = false;
 	}
-	return alturaok;
+	return alturaehValida;
+}
+function validaPeso(peso){
+	var pesoehValido = true;
+	if(peso<=0||peso>280){
+		pesoehValido = false;
+	}
+	return pesoehValido;
+}
 
+function calculaImc(peso,altura){
+	var imc = peso/(altura*altura);
+
+	return imc.toFixed(2);
 }
