@@ -1,7 +1,7 @@
 var titulo = document.querySelector(".titulo");
 titulo.textContent = "Nutricionista";
 
-var pacientes = document.querySelectorAll(".paciente");
+var pacientes = document.querySelectorAll(".paciente");//chamo todos os blocos que possuem esse seletor css e monta um array
 
 for(var i=0;i < pacientes.length;i++){
 	var paciente = pacientes[i];
@@ -34,7 +34,6 @@ for(var i=0;i < pacientes.length;i++){
 
 		tdimc.textContent = imc;
 	}
-
 
 }
 
