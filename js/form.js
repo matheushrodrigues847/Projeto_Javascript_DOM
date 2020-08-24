@@ -13,7 +13,7 @@ botao.addEventListener("click",function(event){
 	if(erros.length>0){
 		exibeMensagem(erros);
 
-		return;
+		return;//esse return encerrar a função inteira
 	}
 
 	var pacienteTr = adicionarPaciente(paciente);
