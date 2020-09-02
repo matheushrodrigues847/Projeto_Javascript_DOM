@@ -2,7 +2,7 @@
 var botao = document.querySelector("#adicionar-paciente");
 
 botao.addEventListener("click",function(event){
-	event.preventDefault();
+	event.preventDefault();//impede a página de recarregar
 
 	var form = document.querySelector("#form-adicionar");
 
@@ -50,7 +50,7 @@ function montaTd(valor,classe){
 
 function exibeMensagem(erros){
 	var ul = document.querySelector("#mensagem-erro");
-	ul.innerHTML = "";
+	ul.innerHTML = "";//elimina todos os elementos filhos dessa tag
 	erros.forEach(function(erro){//esse parametro é cada erro do array erros
 		var li = document.createElement("li");
 		li.textContent = erro;
